@@ -6,7 +6,7 @@ import fenlei from '@/views/fenlei';
 import dingdan from '@/views/dingdan';
 import wode from '@/views/wode';
 import xinwen from '@/views/Second/xinwen';
-import fangjia from '@/views/Second/third/fnagjia'
+import fangjia from '@/views/Second/third/fnagjia';
 // import Find from '@/views/Find';
 // import My from '@/views/My';
 // import Part from '@/views/Part';
@@ -18,20 +18,23 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 const routes = [
   {
+    path: '/',
+    redirect: '/shouye',
+  },
+  {
     path: '/shouye',
     component: shouye,
     children: [
       {
         path: 'xinwen',
         component: xinwen,
-        children:[
-        {
-          path:'fangjia',
-        component: fangjia,
-        }
-        ]
+        children: [
+          {
+            path: 'fangjia',
+            component: fangjia,
+          },
+        ],
       },
-     
     ],
   },
   {
